@@ -3,7 +3,7 @@
     <div class="body">
       <div class="content">
         <div class="content__form">
-          <img src="../assets/images/login/Logo.svg" alt="image"/>
+          <back-button />
           <h1 class="content__title">Forgot password</h1>
           <p>Enter the email you registered previously, then you will be sent an email.</p>
           <form @submit.prevent="onsubmit">
@@ -55,10 +55,6 @@
           console.log(error);
         }
       },
-
-      goToMainPage() {
-        this.$router.push('/');
-      }
     }
   }
 

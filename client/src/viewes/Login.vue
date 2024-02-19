@@ -3,7 +3,7 @@
     <div class="body">
       <div class="content">
         <div class="content__form">
-          <BackButton />
+          <back-button />
           <h1 class="content__title">Log in to your account</h1>
           <p>Learn for free and start the career you've been dreaming of since you were an embryo!</p>
           <form @submit.prevent="onsubmit">
