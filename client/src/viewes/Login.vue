@@ -166,7 +166,7 @@
           & > input{
             border-radius: 8px;
             width: 100%;
-            padding: 20px 40px;
+            padding: 20px 20px;
             background: rgb(243, 244, 246);
             border: none;
             outline: none;

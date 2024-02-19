@@ -108,7 +108,7 @@
         & > input{
           border-radius: 8px;
           width: 100%;
-          padding: 20px 40px;
+          padding: 20px 20px;
           background: rgb(243, 244, 246);
           border: none;
           outline: none;
@@ -121,45 +121,6 @@
             letter-spacing: 0;
           }
         }
-      }
-    }
-
-    &__register-button{
-      text-decoration: none;
-
-      & > div{
-        margin-top: 30px;
-        font-family: Arial,serif;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 19px;
-        letter-spacing: 0;
-        text-align: center;
-        color: rgb(75, 85, 99);
-        & > span{
-          color: rgb(79, 70, 229);
-          background: none;
-        }
-      }
-    }
-
-    &__login-button{
-      width: 100%;
-      margin-top: 30px;
-      padding: 20px 40px;
-      background-color: rgb(79, 70, 229);
-      border-radius: 8px;
-      border: none;
-      color: #fff;
-      font-size: 16px;
-      font-family: Arial, sans-serif;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s;
-      box-shadow: 0 30px 60px 0 rgba(79, 70, 229, 0.15);
-      &:hover{
-        background-color: rgb(93, 83, 236);
-        transform: scale(1.02);
       }
     }
 
@@ -211,23 +172,6 @@
           color: #000;
           gap: 10px;
 
-
-          & > input{
-            border-radius: 8px;
-            width: 100%;
-            padding: 20px 40px;
-            background: rgb(243, 244, 246);
-            border: none;
-            outline: none;
-
-            &::placeholder{
-              color: rgba(0, 0, 0, 0.3);
-              font-family: Arial, serif;
-              font-size: 16px;
-              line-height: 19px;
-              letter-spacing: 0;
-            }
-          }
         }
       }
     }
