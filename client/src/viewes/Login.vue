@@ -25,12 +25,15 @@
                   placeholder="password"
               />
             </label>
-            <label class="content__remember-label">
-              Remember me
+            <div class="content__remember-box">
               <input v-model="isRemembered" type="checkbox" />
-            </label>
-            <button type="submit" class="content__log-in-button">Log in</button>
+              <span>Remember me</span>
+            </div>
+            <button type="submit" class="content__login-button">Log in</button>
           </form>
+          <router-link class="content__register-button" to="/signup">
+            <div>Don't have an account yet? <span>Register now, it's free!</span></div>
+          </router-link>
         </div>
         <div class="content__image">
           <img src="../assets/images/login/main-image.jpeg" alt="image"/>
@@ -42,10 +45,9 @@
 
 <script lang="ts">
   import axios from "axios";
-  import {API_URL} from "../main.ts";
 
   export default {
-    name: 'Splash',
+    name: 'Login',
 
     data() {
       return {
@@ -57,7 +59,7 @@
 
     methods: {
       onsubmit() {
-        axios.post(`${API_URL}/register`, {
+        axios.post(`http://localhost:5000/login`, {
           email: this.email,
           password: this.password,
           isRemembered: this.isRemembered || false,
@@ -72,6 +74,65 @@
   .content{
     display: flex;
     align-items: center;
+
+    &__register-button{
+      text-decoration: none;
+
+      & > div{
+        margin-top: 30px;
+        font-family: Arial,serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19px;
+        letter-spacing: 0;
+        text-align: center;
+        color: rgb(75, 85, 99);
+        & > span{
+          color: rgb(79, 70, 229);
+          background: none;
+        }
+      }
+    }
+
+    &__remember-box{
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      & > span{
+        margin: 0;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        color: #000;
+      }
+
+      & > input{
+        margin: 0;
+        border-radius: 4px;
+        border: 1px solid #000;
+      }
+    }
+
+    &__login-button{
+      width: 100%;
+      margin-top: 30px;
+      padding: 20px 40px;
+      background-color: rgb(79, 70, 229);
+      border-radius: 8px;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 30px 60px 0 rgba(79, 70, 229, 0.15);
+      &:hover{
+        background-color: rgb(93, 83, 236);
+        transform: scale(1.02);
+      }
+    }
 
     &__form{
       & > h1{

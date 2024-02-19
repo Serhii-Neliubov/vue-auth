@@ -1,11 +1,23 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Splash from "../viewes/Splash.vue";
+import Login from "../viewes/Login.vue";
+import Signup from "../viewes/Signup.vue";
 
 const routes = [
-  { path: '/', component: Splash },
-]
+  {
+    path: '/',
+    component: Login,
+    name: "Login",
+  },
+  {
+    path: '/signup',
+    component: Signup,
+    name: "Signup",
+  },
+];
 
-export const router = createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes,
-})
+});
+
+export default router;
