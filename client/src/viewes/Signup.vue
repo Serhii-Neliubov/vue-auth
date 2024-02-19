@@ -3,7 +3,7 @@
     <div class="body">
       <div class="content">
         <div class="content__form">
-          <img src="../assets/images/login/Logo.svg" alt="image"/>
+          <BackButton />
           <h1 class="content__title">Create a new account</h1>
           <p>It's not difficult, you just have to enter some data and it's done straight away !</p>
           <form @submit.prevent="onsubmit">
@@ -59,9 +59,11 @@
 
 <script lang="ts">
   import axios from "axios";
+  import BackButton from "/@/components/BackButton.vue";
 
   export default {
     name: 'Splash',
+    components: {BackButton},
 
     data() {
       return {

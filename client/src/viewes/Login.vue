@@ -3,7 +3,7 @@
     <div class="body">
       <div class="content">
         <div class="content__form">
-          <img src="../assets/images/login/Logo.svg" alt="image"/>
+          <BackButton />
           <h1 class="content__title">Log in to your account</h1>
           <p>Learn for free and start the career you've been dreaming of since you were an embryo!</p>
           <form @submit.prevent="onsubmit">
@@ -34,6 +34,9 @@
           <router-link class="content__register-button" to="/signup">
             <div>Don't have an account yet? <span>Register now, it's free!</span></div>
           </router-link>
+          <router-link class="content__register-button" to="/forgot-password">
+            <div>Don't remember the password? <span>Recovery now!</span></div>
+          </router-link>
         </div>
         <div class="content__image">
           <img src="../assets/images/login/main-image.jpeg" alt="image"/>
@@ -59,11 +62,16 @@
 
     methods: {
       onsubmit() {
-        axios.post(`http://localhost:5000/login`, {
-          email: this.email,
-          password: this.password,
-          isRemembered: this.isRemembered || false,
-        })
+        try{
+          axios.post(`http://localhost:5000/login`, {
+            email: this.email,
+            password: this.password,
+            isRemembered: this.isRemembered || false,
+          })
+
+        } catch (error) {
+          console.log(error);
+        }
       }
     }
   }
@@ -79,7 +87,7 @@
       text-decoration: none;
 
       & > div{
-        margin-top: 30px;
+        margin-top: 20px;
         font-family: Arial,serif;
         font-size: 16px;
         font-weight: 600;
